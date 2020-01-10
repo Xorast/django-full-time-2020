@@ -6,5 +6,5 @@ urlpatterns = [
     path('year-2020', get_2020_page),
     path('read-movies', read_movies),
     path('create-movie', create_movie),
-    path('update-movie', update_movie)
+    path('update-movie/<pk>', update_movie)
 ]

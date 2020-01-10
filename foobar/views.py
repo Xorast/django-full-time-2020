@@ -36,15 +36,15 @@ def create_movie(request):
             return render(request, "foobar/movie-creation-confirmed.html")
 
 
-def update_movie(request):
+def update_movie(request, pk):
 
     if request.method == "GET":
-        movie = get_object_or_404(Movies, pk=1)
+        movie = get_object_or_404(Movies, pk=pk)
         form = MoviesForm(instance=movie)
         return render(request, "foobar/movie-update.html", {'form': form})
 
     if request.method == 'POST':
-        movie = get_object_or_404(Movies, pk=1)
+        movie = get_object_or_404(Movies, pk=pk)
         form = MoviesForm(request.POST, instance=movie)
         form.save()
         return render(request, "foobar/movie-creation-confirmed.html")
