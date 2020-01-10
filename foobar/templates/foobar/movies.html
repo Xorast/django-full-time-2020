@@ -1,0 +1,31 @@
+{% extends "base.html" %}
+
+{% block title %}
+Movies
+{% endblock %}
+
+{% block content %}
+
+<div class="container">
+    <div class="row">
+        <div class="col-12">
+    
+        {% for movie in movies %}
+
+            <div class="card" style="width: 18rem;">
+                <div class="card-body">
+                    <h5 class="card-title">{{ movie.name }}</h5>
+                    <p class="card-text">{{ movie.description }}</p>
+                    <p class="card-text">Time: {{ movie.time }}</p>
+                    <p class="card-text">Id: {{ movie.id }}</p>
+                    <a href="#" class="btn btn-primary">Go somewhere</a>
+                </div>
+            </div>
+            
+        {% endfor%}
+
+        </div>
+    </div>
+</div>
+    
+{% endblock %}

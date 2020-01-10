@@ -1,0 +1,30 @@
+{% extends "base.html" %}
+{% load bootstrap_tags %}
+
+{% block title %}
+Update Movie
+{% endblock %}
+
+{% block content %}
+
+<div class="container">
+    <div class="row">
+        <div class="col-12">
+
+            <h1>UPDATE MOVIE</h1>
+
+            <form action="/foobar/update-movie" method="POST">
+
+                {% csrf_token %}
+
+                {{ form|as_bootstrap }}
+
+                <button type="submit" class="btn btn-primary">Submit</button>
+
+            </form>
+
+        </div>
+    </div>
+</div>
+
+{% endblock %}

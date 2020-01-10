@@ -1,0 +1,30 @@
+{% extends "base.html" %}
+
+{% block title %}
+Banana
+{% endblock %}
+
+{% block content %}
+    
+    {% for product in products %}
+
+        <div class="card" style="width: 18rem;">
+            <img src="..." class="card-img-top" alt="...">
+            <div class="card-body">
+                <h5 class="card-title">Card title</h5>
+                <p class="card-text">Hello {{ product.name }} {{ product.price }}! 
+                
+                {% if name == "Xav" %}
+                    (is a member of staff)
+                {% else %}
+                    (is a student) 
+                {% endif %}
+
+                Have a Great Year {{ year }}!</p>
+                <a href="#" class="btn btn-primary">Go somewhere</a>
+            </div>
+        </div>
+        
+    {% endfor%}
+    
+{% endblock %}
