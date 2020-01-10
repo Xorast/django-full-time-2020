@@ -41,7 +41,7 @@ def update_movie(request, pk):
     if request.method == "GET":
         movie = get_object_or_404(Movies, pk=pk)
         form = MoviesForm(instance=movie)
-        return render(request, "foobar/movie-update.html", {'form': form})
+        return render(request, "foobar/movie-update.html", {'form': form, 'id': pk})
 
     if request.method == 'POST':
         movie = get_object_or_404(Movies, pk=pk)
